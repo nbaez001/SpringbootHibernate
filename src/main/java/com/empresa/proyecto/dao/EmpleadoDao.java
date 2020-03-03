@@ -13,4 +13,6 @@ public interface EmpleadoDao {
 	int registrarEmpleado(Empleado e);
 
 	int eliminarEmpleado(Empleado e);
+	
+	int actualizarEmpleado(Empleado e);
 }

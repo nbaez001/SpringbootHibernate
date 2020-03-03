@@ -52,5 +52,12 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		sesion.delete(e2);
 		return 1;
 	}
+	
+	@Override
+	public int actualizarEmpleado(Empleado e) {
+		Session sesion = entitymanager.unwrap(Session.class);
+		sesion.saveOrUpdate(e);
+		return 1;
+	}
 
 }

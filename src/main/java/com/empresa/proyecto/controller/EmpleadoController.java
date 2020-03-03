@@ -37,5 +37,10 @@ public class EmpleadoController {
 	public int eliminarEmpleado(@RequestBody Empleado e) {
 		return empleadoService.eliminarEmpleado(e);
 	}
+	
+	@PostMapping(value = "/actualizar")
+	public int actualizarEmpleado(@RequestBody Empleado e) {
+		return empleadoService.actualizarEmpleado(e);
+	}
 
 }

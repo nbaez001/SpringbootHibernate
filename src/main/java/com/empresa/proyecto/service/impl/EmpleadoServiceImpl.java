@@ -40,4 +40,9 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		return empleadoDao.eliminarEmpleado(e);
 	}
 
+	@Override
+	public int actualizarEmpleado(Empleado e) {
+		return empleadoDao.actualizarEmpleado(e);
+	}
+
 }
