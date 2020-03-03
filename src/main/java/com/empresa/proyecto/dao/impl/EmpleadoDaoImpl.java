@@ -27,21 +27,30 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	}
 
 	@Override
-	public Empleado obtenerEmpleado(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Empleado obtenerEmpleado(Empleado e) {
+		Session sesion = entitymanager.unwrap(Session.class);
+		Query<Empleado> query = sesion.createQuery("from Empleado e where e.id="+e.getId(), Empleado.class);
+		Empleado em = query.uniqueResult();
+		return em;
 	}
 
 	@Override
 	public int registrarEmpleado(Empleado e) {
-		// TODO Auto-generated method stub
-		return 0;
+		Session sesion = entitymanager.unwrap(Session.class);
+		Integer codResult = (Integer) sesion.save(e);
+		if (codResult == null) {
+			return 0;
+		} else {
+			return 1;
+		}
 	}
 
 	@Override
-	public int eliminarEmpleado(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int eliminarEmpleado(Empleado e) {
+		Session sesion = entitymanager.unwrap(Session.class);
+		Empleado e2 = obtenerEmpleado(e);
+		sesion.delete(e2);
+		return 1;
 	}
 
 }

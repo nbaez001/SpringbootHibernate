@@ -24,23 +24,20 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Transactional
 	@Override
-	public Empleado obtenerEmpleado(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Empleado obtenerEmpleado(Empleado e) {
+		return empleadoDao.obtenerEmpleado(e);
 	}
 
 	@Transactional
 	@Override
 	public int registrarEmpleado(Empleado e) {
-		// TODO Auto-generated method stub
-		return 0;
+		return empleadoDao.registrarEmpleado(e);
 	}
 
 	@Transactional
 	@Override
-	public int eliminarEmpleado(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int eliminarEmpleado(Empleado e) {
+		return empleadoDao.eliminarEmpleado(e);
 	}
 
 }

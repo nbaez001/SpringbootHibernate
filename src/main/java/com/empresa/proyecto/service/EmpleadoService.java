@@ -8,9 +8,9 @@ public interface EmpleadoService {
 	
 	List<Empleado> listaEmpleado();
 
-	Empleado obtenerEmpleado(int id);
+	Empleado obtenerEmpleado(Empleado e);
 
 	int registrarEmpleado(Empleado e);
 
-	int eliminarEmpleado(int id);
+	int eliminarEmpleado(Empleado e);
 }
